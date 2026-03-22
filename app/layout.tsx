@@ -3,6 +3,7 @@ import { JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import "./academia-layout.css";
+import { ThemeFabMenu } from "@/components/ThemeFabMenu";
 import { site } from "@/lib/site";
 import { THEME_STORAGE_KEY } from "@/lib/theme";
 
@@ -52,6 +53,7 @@ export default function RootLayout({
           {themeInit}
         </Script>
         {children}
+        <ThemeFabMenu />
       </body>
     </html>
   );

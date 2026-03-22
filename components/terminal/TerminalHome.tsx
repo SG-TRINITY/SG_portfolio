@@ -2,7 +2,6 @@ import Link from "next/link";
 import { renderBioChunks } from "@/components/BioChunks";
 import type { GitHubContributionDay } from "@/lib/github-contributions";
 import { ContribGrid } from "@/components/ContribGrid";
-import { ThemeToggle } from "@/components/ThemeToggle";
 import { TypewriterTagline } from "@/components/TypewriterTagline";
 import { site } from "@/lib/site";
 
@@ -33,7 +32,6 @@ export function TerminalHome({
           </span>
         </div>
         <div className="titlebar-right">
-          <ThemeToggle />
           <nav className="tb-nav">
             <a href="#about">~/about</a>
             <a href="#projects">~/projects</a>

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { renderBioChunks } from "@/components/BioChunks";
-import { ThemeToggle } from "@/components/ThemeToggle";
 import { TypewriterTagline } from "@/components/TypewriterTagline";
 import { academiaContent } from "@/lib/academia-content";
 import { site } from "@/lib/site";
@@ -24,14 +23,11 @@ export function AcademiaHome({ resumeHref, emailHref }: Props) {
             {firstName}
             {restName ? <span>{restName}</span> : null}
           </div>
-          <div className="da-nav-inner">
-            <ThemeToggle />
-            <div className="da-nav-links">
-              <a href="#about">About</a>
-              <a href="#projects">Works</a>
-              <a href="#skills">Stack</a>
-              <a href="#contact">Contact</a>
-            </div>
+          <div className="da-nav-links">
+            <a href="#about">About</a>
+            <a href="#projects">Works</a>
+            <a href="#skills">Stack</a>
+            <a href="#contact">Contact</a>
           </div>
         </nav>
 

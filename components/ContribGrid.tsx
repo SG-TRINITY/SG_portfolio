@@ -28,9 +28,14 @@ type Props = {
 
 export function ContribGrid({ weeks, seed }: Props) {
   if (weeks?.length) {
+    const weekCount = weeks.length;
     return (
       <div className="contrib-scroll">
-        <div className="contrib-grid contrib-grid--github" id="contrib">
+        <div
+          className="contrib-grid contrib-grid--github"
+          id="contrib"
+          style={{ aspectRatio: `${weekCount} / 7` }}
+        >
           {weeks.flatMap((week) =>
             week.map((day) => (
               <div

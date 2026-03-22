@@ -16,7 +16,7 @@ export const site = {
   /** GitHub username (for live contribution graph; needs GITHUB_TOKEN in env) */
   githubLogin: "SG-TRINITY",
   /** Shown after @ in prompts */
-  promptUser: "you",
+  promptUser: "sg",
   promptHost: "portfolio",
   name: "Shrishty Gnanasekaran",
   /** Rotating strings under the hero heading */

@@ -11,7 +11,7 @@ Personal portfolio site for **Shrishty G** — a terminal / GitHub-dark themed s
 
 ## Themes
 
-Use the **terminal** / **academia** toggle in the top bar. Choice is saved in `localStorage` under `sg-theme`.
+Use the **square theme button** (palette icon, bottom-right) to switch **terminal** / **academia**. Choice is saved in `localStorage` under `sg-theme`.
 
 - **Terminal** — default GitHub-dark + scanlines (`app/globals.css`).
 - **Academia** — dark parchment/ink layout (`app/academia-layout.css`) + content in `components/academia/AcademiaHome.tsx` and `lib/academia-content.ts`. Toggle shows this view or the terminal view (`components/terminal/TerminalHome.tsx`).

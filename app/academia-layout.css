@@ -60,13 +60,6 @@ html[data-theme="academia"] .da-nav {
   margin-bottom: 0;
 }
 
-html[data-theme="academia"] .da-nav-inner {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
 html[data-theme="academia"] .da-logo {
   font-family: "IM Fell English SC", serif;
   font-size: 18px;
@@ -98,22 +91,6 @@ html[data-theme="academia"] .da-nav-links a {
 
 html[data-theme="academia"] .da-nav-links a:hover {
   color: var(--da-parchment);
-}
-
-html[data-theme="academia"] .da-nav .theme-switch-btn {
-  border-color: var(--da-rule);
-  color: #5a5038;
-}
-
-html[data-theme="academia"] .da-nav .theme-switch-btn:hover {
-  color: var(--da-amber);
-  border-color: var(--da-amber);
-}
-
-html[data-theme="academia"] .da-nav .theme-switch-btn.active {
-  color: var(--da-ink);
-  background: var(--da-amber);
-  border-color: var(--da-amber);
 }
 
 html[data-theme="academia"] .da-hero {

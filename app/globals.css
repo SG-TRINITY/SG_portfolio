@@ -66,15 +66,23 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 12px;
+  min-width: 0;
   padding: 14px 0;
   border-bottom: 1px solid var(--border);
   margin-bottom: 48px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
 }
 
 .tb-left {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex: 0 1 auto;
+  min-width: 0;
 }
 
 .tb-dot {
@@ -109,44 +117,146 @@ body::before {
 .titlebar-right {
   display: flex;
   align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  gap: 12px;
   justify-content: flex-end;
-}
-
-.theme-switch {
-  display: flex;
-  gap: 4px;
-  font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
-}
-
-.theme-switch-btn {
-  font-family: inherit;
-  font-size: 11px;
-  padding: 4px 10px;
-  cursor: pointer;
-  border: 1px solid var(--border);
-  background: transparent;
-  color: var(--text-dim);
-  letter-spacing: 0.4px;
-  text-transform: lowercase;
-  transition: color 0.15s, border-color 0.15s, background 0.15s;
-}
-
-.theme-switch-btn:hover {
-  color: var(--green);
-  border-color: var(--green);
-}
-
-.theme-switch-btn.active {
-  color: var(--green);
-  border-color: var(--green-dim);
-  background: rgba(35, 134, 54, 0.12);
+  flex: 0 0 auto;
 }
 
 .tb-nav {
   display: flex;
   gap: 0;
+  flex-shrink: 0;
+}
+
+/* Floating theme control (root layout) */
+.theme-fab-root {
+  position: fixed;
+  bottom: max(24px, env(safe-area-inset-bottom, 0px) + 12px);
+  right: max(24px, env(safe-area-inset-right, 0px) + 12px);
+  z-index: 100;
+  font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
+}
+
+.theme-fab-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.theme-fab-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 152px;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg2);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+}
+
+.theme-fab-option {
+  font-family: inherit;
+  font-size: 12px;
+  text-align: left;
+  text-transform: lowercase;
+  letter-spacing: 0.4px;
+  padding: 10px 14px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+
+.theme-fab-option:hover {
+  color: var(--green);
+  border-color: var(--border);
+}
+
+.theme-fab-option.active {
+  color: var(--green);
+  border-color: var(--green-dim);
+  background: rgba(35, 134, 54, 0.12);
+}
+
+.theme-fab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--bg2);
+  color: var(--text-dim);
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+  transition: color 0.15s, border-color 0.15s, background 0.15s, transform 0.15s;
+}
+
+.theme-fab-icon {
+  width: 26px;
+  height: 26px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.theme-fab:hover {
+  color: var(--green);
+  border-color: var(--green);
+}
+
+.theme-fab-open {
+  color: var(--green);
+  border-color: var(--green-dim);
+  background: rgba(35, 134, 54, 0.1);
+}
+
+html[data-theme="academia"] .theme-fab-root {
+  font-family: "Crimson Pro", Georgia, serif;
+}
+
+html[data-theme="academia"] .theme-fab-panel {
+  border-color: var(--da-rule);
+  background: var(--da-surface);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
+}
+
+html[data-theme="academia"] .theme-fab-option {
+  color: #5a5038;
+}
+
+html[data-theme="academia"] .theme-fab-option:hover {
+  color: var(--da-amber);
+  border-color: var(--da-rule);
+}
+
+html[data-theme="academia"] .theme-fab-option.active {
+  color: var(--da-ink);
+  background: var(--da-amber);
+  border-color: var(--da-amber);
+}
+
+html[data-theme="academia"] .theme-fab {
+  border-color: var(--da-rule);
+  background: var(--da-surface2);
+  color: #5a5038;
+}
+
+html[data-theme="academia"] .theme-fab:hover {
+  color: var(--da-amber);
+  border-color: var(--da-amber);
+}
+
+html[data-theme="academia"] .theme-fab-open {
+  color: var(--da-ink);
+  border-color: var(--da-amber);
+  background: var(--da-amber);
 }
 
 .tb-nav a {
@@ -458,6 +568,7 @@ body::before {
   margin: 0 -4px;
   padding-left: 4px;
   padding-right: 4px;
+  width: 100%;
 }
 
 .contrib-grid {
@@ -466,15 +577,25 @@ body::before {
   flex-wrap: wrap;
 }
 
-/* GitHub-style: one column per week, seven rows (Sun–Sat) */
+/* GitHub-style: one column per week, seven rows; full width + aspect-ratio keeps cells square */
 .contrib-grid.contrib-grid--github {
   display: grid;
   grid-auto-flow: column;
-  grid-template-rows: repeat(7, 12px);
-  grid-auto-columns: 12px;
-  gap: 3px;
-  width: max-content;
+  grid-template-rows: repeat(7, minmax(0, 1fr));
+  grid-auto-columns: minmax(0, 1fr);
+  gap: clamp(2px, 0.55vw, 5px);
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
   flex-wrap: unset;
+}
+
+.contrib-grid.contrib-grid--github .contrib-day {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  box-sizing: border-box;
 }
 
 .contrib-day {

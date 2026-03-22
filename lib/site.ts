@@ -21,6 +21,7 @@ export const site = {
     "ml enthusiast",
     "open source contributor",
     "full stack dev",
+    "web developer",
     "computer scientist",
     "bug wrangler",
   ],
@@ -175,18 +176,22 @@ export const site = {
   contactTagline:
     "open to: internships · research · collabs · interesting problems",
   contactCells: [
-    { key: "email", display: "you@email.com", href: "mailto:you@email.com" },
+    { key: "email", display: "gnshrishty@gmail.com", href: "mailto:gnshrishty@gmail.com" },
     {
       key: "github",
-      display: "github.com/yourhandle",
-      href: "https://github.com/yourhandle",
+      display: "github.com/SG-TRINITY",
+      href: "https://github.com/SG-TRINITY",
     },
     {
       key: "linkedin",
-      display: "linkedin.com/in/you",
-      href: "https://linkedin.com/in/you",
+      display: "linkedin.com/in/shrishty-g",
+      href: "https://www.linkedin.com/in/shrishty-g-260a032b6/",
     },
-    { key: "resume", display: "download pdf", href: "/resume.pdf" },
+    {
+      key: "resume",
+      display: "download pdf",
+      href: "/ShrishtyG_Resume_sw.pdf",
+    },
   ],
   footer: {
     rightPrefix: "made with ",

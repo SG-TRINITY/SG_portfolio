@@ -54,7 +54,3 @@ Without a token, the site keeps the **decorative** random grid. On Vercel, add `
 ## Deploy
 
 The usual path is push to GitHub and deploy on [Vercel](https://vercel.com) (import repo → it runs `npm run build` automatically).
-
-## Cursor / Windows: `node` not found in the integrated terminal
-
-If `node` works in an external terminal but not inside Cursor, restart Cursor after installing Node, or use the workspace setting in **`.vscode/settings.json`** that prepends `C:\Program Files\nodejs` to `Path` for new integrated terminals.

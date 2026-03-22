@@ -2,10 +2,17 @@
 
 import { useEffect, useRef } from "react";
 
-type Props = { phrases: readonly string[] };
+type Props = {
+  phrases: readonly string[];
+  /** terminal: #tw + block cursor; academia: #da-tw + CSS pipe cursor */
+  variant?: "terminal" | "academia";
+};
 
-export function TypewriterTagline({ phrases }: Props) {
+export function TypewriterTagline({ phrases, variant = "terminal" }: Props) {
   const spanRef = useRef<HTMLSpanElement>(null);
+  const delDelay = variant === "academia" ? 42 : 40;
+  const typeDelay = variant === "academia" ? 95 : 90;
+  const pauseFull = variant === "academia" ? 2400 : 2000;
 
   useEffect(() => {
     if (phrases.length === 0) return;
@@ -29,7 +36,7 @@ export function TypewriterTagline({ phrases }: Props) {
         setText(w.slice(0, ci.current));
         if (ci.current === w.length) {
           del.current = true;
-          timeoutId = setTimeout(type, 2000);
+          timeoutId = setTimeout(type, pauseFull);
           return;
         }
       } else {
@@ -40,7 +47,7 @@ export function TypewriterTagline({ phrases }: Props) {
           pi.current = (pi.current + 1) % phrases.length;
         }
       }
-      timeoutId = setTimeout(type, del.current ? 40 : 90);
+      timeoutId = setTimeout(type, del.current ? delDelay : typeDelay);
     };
 
     type();
@@ -48,7 +55,11 @@ export function TypewriterTagline({ phrases }: Props) {
       cancelled = true;
       if (timeoutId) clearTimeout(timeoutId);
     };
-  }, [phrases]);
+  }, [phrases, delDelay, typeDelay, pauseFull]);
+
+  if (variant === "academia") {
+    return <span id="da-tw" ref={spanRef} />;
+  }
 
   return (
     <>

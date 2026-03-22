@@ -4,13 +4,17 @@ export type BioChunk =
   | { kind: "hl"; v: string }
   | { kind: "str"; v: string };
 
-export type ProjectBadge = "feat" | "ml" | "sys" | "web";
+export type ProjectBadge = "feat" | "ml" | "sys" | "web" | "qa";
+
+export type ProjectBadgeChip = { label: string; type: ProjectBadge };
 
 export type SkillLevel = "hi" | "mid" | "lo";
 
 export const site = {
   /** Shorthand for titlebar / footer (often lowercase / handle-style) */
   handle: "shrishty",
+  /** GitHub username (for live contribution graph; needs GITHUB_TOKEN in env) */
+  githubLogin: "SG-TRINITY",
   /** Shown after @ in prompts */
   promptUser: "you",
   promptHost: "portfolio",
@@ -82,39 +86,62 @@ export const site = {
   projects: [
     {
       num: "01",
-      folder: "project-alpha/",
-      badge: { label: "featured", type: "feat" as ProjectBadge },
+      folder: "TomatoSoup/",
+      badges: [{ label: "web", type: "web" as ProjectBadge }] satisfies ProjectBadgeChip[],
       description:
-        "A short description of what this does and the problem it solves. Make it crisp.",
-      stack: ["react", "node", "postgresql"],
-      links: { repo: "https://github.com" },
+        "Django hobby community app—pick interests, a personalized “My Bowl” feed, posts with images, comments, and profiles. I owned UI/UX and frontend: templates, layout, and keeping the look consistent.",
+      stack: ["django", "python", "html/css"],
+      links: {
+        repo: "https://github.com/Irisveil/TomatoSoup",
+      },
     },
     {
       num: "02",
-      folder: "project-beta/",
-      badge: { label: "ml", type: "ml" as ProjectBadge },
+      folder: "banana-math/",
+      badges: [
+        { label: "web", type: "web" as ProjectBadge },
+        { label: "featured", type: "feat" as ProjectBadge },
+      ] satisfies ProjectBadgeChip[],
       description:
-        "The interesting technical challenge here and what you discovered building it.",
-      stack: ["python", "pytorch", "fastapi"],
-      links: { repo: "https://github.com" },
+        "Mental math practice web app (Next.js, Supabase auth, leaderboard, stats). I focused on UI/UX and frontend—simple, fast flows and a polished interface.",
+      stack: ["next.js", "typescript", "supabase"],
+      links: {
+        demo: "https://www.numerify.me/",
+        repo: "https://github.com/Gym-Bros-Programs/banana-math",
+      },
     },
     {
       num: "03",
-      folder: "project-gamma/",
-      badge: { label: "systems", type: "sys" as ProjectBadge },
+      folder: "f24project-Kayanou/",
+      badges: [{ label: "web", type: "web" as ProjectBadge }] satisfies ProjectBadgeChip[],
       description:
-        "What makes this one technically interesting — the hard part you're proud you solved.",
-      stack: ["c++", "linux", "cmake"],
-      links: { repo: "https://github.com" },
+        "CMPUT 401 (UAlberta) team software project. I led UI/UX and frontend work—making the product clear, usable, and visually cohesive for users.",
+      stack: ["frontend", "ui/ux", "typescript"],
+      links: {
+        repo: "https://github.com/UAlberta-CMPUT401/f24project-Kayanou",
+      },
     },
     {
       num: "04",
-      folder: "project-delta/",
-      badge: { label: "web", type: "web" as ProjectBadge },
+      folder: "agile-beast/",
+      badges: [{ label: "testing", type: "qa" as ProjectBadge }] satisfies ProjectBadgeChip[],
       description:
-        "Another cool build. Link to GitHub or a live demo so people can actually try it.",
-      stack: ["typescript", "next.js", "vercel"],
-      links: { demo: "https://example.com", repo: "https://github.com" },
+        "CMPUT 301 Android household-inventory app (items, tags, sort/filter, insurance-style records). I was responsible for testing—coverage, edge cases, and keeping quality tight as the team shipped features.",
+      stack: ["java", "android", "testing"],
+      links: {
+        repo: "https://github.com/CMPUT301F23T29/agile-beast",
+      },
+    },
+    {
+      num: "05",
+      folder: "SG_portfolio/",
+      badges: [{ label: "web", type: "web" as ProjectBadge }] satisfies ProjectBadgeChip[],
+      description:
+        "This site: terminal / GitHub-dark theme, optional live GitHub contribution graph, and copy driven from one config file—Next.js, React, TypeScript.",
+      stack: ["next.js", "react", "typescript"],
+      links: {
+        repo: "https://github.com/SG-TRINITY/SG_portfolio",
+      },
     },
   ],
   skillGroups: [

@@ -40,6 +40,17 @@ Almost all copy and links live in **`lib/site.ts`** (name, bio chunks, projects,
 
 Add **`public/resume.pdf`** if you use the resume link, or change the `href` in `contactCells` in `lib/site.ts`.
 
+## Live GitHub contribution graph
+
+The activity heatmap can show your **real** last 24 weeks (GitHub’s own colors).
+
+1. Copy **`.env.example`** to **`.env.local`**.
+2. Create a [classic personal access token](https://github.com/settings/tokens) with the **`read:user`** scope.
+3. Put it in `.env.local` as `GITHUB_TOKEN=...`.
+4. Set **`githubLogin`** in **`lib/site.ts`** to your GitHub username (default: `SG-TRINITY`).
+
+Without a token, the site keeps the **decorative** random grid. On Vercel, add `GITHUB_TOKEN` under **Project → Settings → Environment Variables** (never commit the real token).
+
 ## Deploy
 
 The usual path is push to GitHub and deploy on [Vercel](https://vercel.com) (import repo → it runs `npm run build` automatically).

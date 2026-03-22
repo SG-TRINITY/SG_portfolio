@@ -2,13 +2,16 @@ import Link from "next/link";
 import { renderBioChunks } from "@/components/BioChunks";
 import { ContribGrid } from "@/components/ContribGrid";
 import { TypewriterTagline } from "@/components/TypewriterTagline";
+import { fetchGitHubContributionWeeks } from "@/lib/github-contributions";
 import { site } from "@/lib/site";
 
 function whoamiValClass(c: string) {
   return c === "default" ? "val" : `val ${c}`;
 }
 
-export default function Home() {
+export default async function Home() {
+  const contributionWeeks = await fetchGitHubContributionWeeks(site.githubLogin);
+
   const resumeHref =
     site.contactCells.find((c) => c.key === "resume")?.href ?? "/resume.pdf";
   const emailHref =
@@ -128,7 +131,7 @@ export default function Home() {
 
       <div className="contrib-section">
         <div className="contrib-label">activity — last 24 weeks</div>
-        <ContribGrid seed={site.contribSeed} />
+        <ContribGrid weeks={contributionWeeks} seed={site.contribSeed} />
       </div>
 
       <section className="section" id="projects">
@@ -148,7 +151,9 @@ export default function Home() {
         <div className="project-list">
           {site.projects.map((project) => {
             const href =
-              project.links.demo ?? project.links.repo ?? undefined;
+              "demo" in project.links && project.links.demo
+                ? project.links.demo
+                : project.links.repo;
             return (
               <div key={project.num} className="project-item">
                 <span className="project-num">{project.num}</span>
@@ -163,9 +168,13 @@ export default function Home() {
                         project.folder
                       )}
                     </span>
-                    <span className={`badge ${project.badge.type}`}>
-                      {project.badge.label}
-                    </span>
+                    <div className="project-badges">
+                      {project.badges.map((b, i) => (
+                        <span key={i} className={`badge ${b.type}`}>
+                          {b.label}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                   <p className="project-desc">{project.description}</p>
                   {("demo" in project.links && project.links.demo) ||

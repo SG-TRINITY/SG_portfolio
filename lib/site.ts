@@ -9,12 +9,12 @@ export type ProjectBadge = "feat" | "ml" | "sys" | "web";
 export type SkillLevel = "hi" | "mid" | "lo";
 
 export const site = {
-  /** Shorthand for titlebar / prompts, e.g. "yourname" */
-  handle: "yourname",
+  /** Shorthand for titlebar / footer (often lowercase / handle-style) */
+  handle: "shrishty",
   /** Shown after @ in prompts */
   promptUser: "you",
   promptHost: "portfolio",
-  name: "YourName",
+  name: "Shrishty Gnanasekaran",
   /** Rotating strings under the hero heading */
   typingPhrases: [
     "software engineer",
@@ -25,10 +25,10 @@ export const site = {
     "bug wrangler",
   ],
   heroBio: [
-    { kind: "text", v: "CS student " },
-    { kind: "hl", v: "@[Your University]" },
+    { kind: "text", v: "CS graduate " },
+    { kind: "hl", v: "@[University of Alberta]" },
     { kind: "text", v: " · focused on " },
-    { kind: "hl", v: "[your area]" },
+    { kind: "hl", v: "[web development]" },
     {
       kind: "text",
       v: " · building things that are useful, sometimes elegant, occasionally both. Open to internships, research, and interesting problems.",
@@ -36,18 +36,18 @@ export const site = {
   ] satisfies BioChunk[],
   statusRow: [
     { key: "status:", value: "● open_to_work", valClass: "green" as const },
-    { key: "location:", value: "[Your City]", valClass: "blue" as const },
-    { key: "year:", value: "[2nd/3rd/4th]", valClass: "yellow" as const },
+    { key: "location:", value: "[Edmonton, Canada]", valClass: "blue" as const },
+    { key: "year:", value: "[new grad]", valClass: "yellow" as const },
   ],
   aboutLeft: [
     [
       { kind: "text", v: "Hi — I'm a " },
-      { kind: "str", v: "[year]" },
+      { kind: "str", v: "[new grad]" },
       {
         kind: "text",
-        v: " year CS student at ",
+        v: " CS graduate from ",
       },
-      { kind: "hl", v: "[University]" },
+      { kind: "hl", v: "[University of Alberta]" },
       {
         kind: "text",
         v: ". I love building software that does something real, preferably something that would have seemed like magic a decade ago.",
@@ -55,7 +55,7 @@ export const site = {
     ],
     [
       { kind: "text", v: "My interests include " },
-      { kind: "hl", v: "[your area]" },
+      { kind: "hl", v: "[web development]" },
       {
         kind: "text",
         v: ", distributed systems, and the occasional rabbit hole into programming language theory at 2am.",
@@ -69,11 +69,11 @@ export const site = {
     ],
   ] satisfies BioChunk[][],
   whoami: [
-    { key: "name", value: '"[Your Name]"', valClass: "default" as const },
-    { key: "uni", value: '"[University]"', valClass: "blue" as const },
-    { key: "focus", value: '"[Your Area]"', valClass: "purple" as const },
+    { key: "name", value: '"Shrishty G"', valClass: "default" as const },
+    { key: "uni", value: '"[University of Alberta]"', valClass: "blue" as const },
+    { key: "focus", value: '"[web development]"', valClass: "purple" as const },
     { key: "available", value: "true", valClass: "green" as const },
-    { key: "location", value: '"[City]"', valClass: "default" as const },
+    { key: "location", value: '"[Edmonton, Canada]"', valClass: "default" as const },
     { key: "coffee", value: "required", valClass: "yellow" as const },
   ],
   /** Seed so the activity grid matches SSR and client */
@@ -194,7 +194,7 @@ export const site = {
     rightSuffix: " and too much caffeine",
   },
   /** Page <title> and meta description */
-  metaTitle: "yourname — cs student",
+  metaTitle: "Shrishty G — cs student",
   metaDescription:
     "CS student portfolio — projects, skills, and contact. Open to internships and interesting problems.",
 } as const;

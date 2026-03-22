@@ -169,7 +169,11 @@ export const site = {
         { name: "rust", level: "lo" as SkillLevel, stars: "★☆☆☆" },
         { name: "kubernetes", level: "lo" as SkillLevel, stars: "★☆☆☆" },
         { name: "typescript", level: "mid" as SkillLevel, stars: "★★☆☆" },
-        { name: "[your thing]", level: "lo" as SkillLevel, stars: "★☆☆☆" },
+        {
+          name: "still exploring",
+          level: "lo" as SkillLevel,
+          stars: "★☆☆☆",
+        },
       ],
     },
   ],

@@ -74,7 +74,30 @@ body::before {
   margin-bottom: 48px;
   overflow-x: auto;
   overflow-y: hidden;
-  scrollbar-width: thin;
+}
+
+/* Firefox */ 
+@supports (scrollbar-width: thin) {
+  .titlebar {
+    scrollbar-width: thin;
+  }
+}
+
+/* Chromium/Safari */
+.titlebar::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+.titlebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.titlebar::-webkit-scrollbar-thumb {
+  background-color: rgba(125, 133, 144, 0.55);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
 }
 
 .tb-left {
@@ -275,12 +298,49 @@ html[data-theme="academia"] .theme-fab-open {
   border-color: var(--border);
 }
 
+@media (max-width: 600px) {
+  .page {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .titlebar {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    margin-bottom: 24px;
+  }
+
+  .tb-left {
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+  }
+
+  .titlebar-right {
+    flex: 1 1 100%;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .tb-nav {
+    flex-wrap: wrap;
+    gap: 0;
+  }
+
+  .tb-nav a {
+    padding: 4px 10px;
+  }
+}
+
 .prompt-line {
   display: flex;
   align-items: center;
   gap: 0;
   margin-bottom: 4px;
   flex-wrap: wrap;
+}
+
+.prompt-line--mb-14 {
+  margin-bottom: 14px;
 }
 
 .prompt-user {
@@ -304,6 +364,10 @@ html[data-theme="academia"] .theme-fab-open {
 .prompt-sym {
   color: var(--text-dim);
   margin: 0 6px;
+}
+
+.prompt-sym--ml-4 {
+  margin-left: 4px;
 }
 
 .prompt-cmd {

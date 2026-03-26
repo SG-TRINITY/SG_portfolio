@@ -108,13 +108,11 @@ export function TerminalHome({
             ))}
           </div>
           <div className="about-cell right">
-            <div className="prompt-line" style={{ marginBottom: 14 }}>
+            <div className="prompt-line prompt-line--mb-14">
               <span className="prompt-user">{site.promptUser}</span>
               <span className="prompt-at">@</span>
               <span className="prompt-host">{site.promptHost}</span>
-              <span className="prompt-sym" style={{ marginLeft: 4 }}>
-                $
-              </span>
+              <span className="prompt-sym prompt-sym--ml-4">$</span>
               <span className="prompt-cmd">
                 {" "}
                 whoami <span className="prompt-flag">--json</span>

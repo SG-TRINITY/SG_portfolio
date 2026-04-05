@@ -436,13 +436,85 @@ html[data-theme="academia"] .da-project-card-img {
   margin-bottom: 20px;
 }
 
-html[data-theme="academia"] .da-project-tag {
+html[data-theme="academia"] .da-project-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+/* Category tags: reset terminal “neon” badges — ink, rule, muted type */
+html[data-theme="academia"] .da-project-badges .badge {
+  font-family: "Crimson Pro", Georgia, serif;
   font-size: 10px;
-  letter-spacing: 3px;
+  font-weight: 400;
+  letter-spacing: 2.4px;
   text-transform: uppercase;
+  padding: 5px 11px;
+  border: 1px solid var(--da-rule);
+  background: rgba(31, 28, 18, 0.65);
+  color: var(--da-parchment-dim);
+}
+
+html[data-theme="academia"] .da-project-badges .badge.feat {
   color: var(--da-amber);
-  margin-bottom: 10px;
-  opacity: 0.7;
+  border-color: rgba(192, 135, 74, 0.35);
+  background: rgba(192, 135, 74, 0.07);
+}
+
+html[data-theme="academia"] .da-project-badges .badge.web {
+  color: #8a7d62;
+  border-color: rgba(90, 80, 56, 0.55);
+  background: rgba(36, 32, 24, 0.5);
+}
+
+html[data-theme="academia"] .da-project-badges .badge.qa {
+  color: #9a7a62;
+  border-color: rgba(120, 90, 70, 0.45);
+  background: rgba(45, 36, 28, 0.55);
+}
+
+html[data-theme="academia"] .da-project-badges .badge.backend {
+  color: #6d7a6e;
+  border-color: rgba(80, 92, 82, 0.45);
+  background: rgba(28, 34, 30, 0.55);
+}
+
+html[data-theme="academia"] .da-project-badges .badge.mobile {
+  color: #7d8a72;
+  border-color: rgba(90, 100, 78, 0.4);
+  background: rgba(30, 34, 26, 0.55);
+}
+
+html[data-theme="academia"] .da-project-badges .badge.team {
+  color: #8a7578;
+  border-color: rgba(110, 90, 95, 0.4);
+  background: rgba(38, 32, 34, 0.5);
+}
+
+html[data-theme="academia"] .da-project-badges .badge.ux {
+  color: #9a8a6e;
+  border-color: rgba(120, 108, 82, 0.45);
+  background: rgba(40, 36, 26, 0.5);
+}
+
+html[data-theme="academia"] .da-project-badges .badge.ai {
+  color: #7d7290;
+  border-color: rgba(95, 85, 115, 0.4);
+  background: rgba(32, 28, 40, 0.5);
+}
+
+html[data-theme="academia"] .da-project-badges .badge.ml {
+  color: #7d7290;
+  border-color: rgba(95, 85, 115, 0.4);
+  background: rgba(32, 28, 40, 0.5);
+}
+
+html[data-theme="academia"] .da-project-badges .badge.sys {
+  color: #8a6a62;
+  border-color: rgba(110, 80, 72, 0.4);
+  background: rgba(40, 30, 28, 0.5);
 }
 
 html[data-theme="academia"] .da-project-name {
@@ -476,13 +548,51 @@ html[data-theme="academia"] .da-pills {
 }
 
 html[data-theme="academia"] .da-pill {
+  font-family: "Crimson Pro", Georgia, serif;
   font-size: 10px;
-  padding: 3px 9px;
-  letter-spacing: 1px;
+  font-weight: 400;
+  padding: 4px 10px;
+  letter-spacing: 1.6px;
   text-transform: uppercase;
-  color: #6a5030;
-  border: 1px solid #2a2010;
-  background: var(--da-surface);
+  border: 1px solid var(--da-rule);
+  background: rgba(31, 28, 18, 0.55);
+}
+
+/* Tech stack: subtle ink / dust tints (still distinct, not terminal-bright) */
+html[data-theme="academia"] .da-pill--c0 {
+  color: #8f8268;
+  border-color: rgba(95, 88, 70, 0.5);
+  background: rgba(38, 34, 26, 0.65);
+}
+
+html[data-theme="academia"] .da-pill--c1 {
+  color: #7d8a72;
+  border-color: rgba(82, 92, 74, 0.45);
+  background: rgba(28, 32, 26, 0.65);
+}
+
+html[data-theme="academia"] .da-pill--c2 {
+  color: #8a7d90;
+  border-color: rgba(95, 88, 105, 0.4);
+  background: rgba(34, 30, 38, 0.6);
+}
+
+html[data-theme="academia"] .da-pill--c3 {
+  color: #a09072;
+  border-color: rgba(115, 100, 78, 0.45);
+  background: rgba(42, 36, 28, 0.6);
+}
+
+html[data-theme="academia"] .da-pill--c4 {
+  color: #9a7a68;
+  border-color: rgba(115, 92, 78, 0.42);
+  background: rgba(40, 32, 28, 0.58);
+}
+
+html[data-theme="academia"] .da-pill--c5 {
+  color: #6d8a8a;
+  border-color: rgba(78, 105, 105, 0.4);
+  background: rgba(26, 34, 34, 0.55);
 }
 
 html[data-theme="academia"] .da-project-links {

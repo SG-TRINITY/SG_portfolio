@@ -143,7 +143,6 @@ export function AcademiaHome({ resumeHref, emailHref }: Props) {
                 "demo" in project.links && project.links.demo
                   ? project.links.demo
                   : project.links.repo;
-              const tag = project.badges[0]?.label ?? "project";
               return (
                 <div key={project.num} className="da-project-card">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -152,7 +151,13 @@ export function AcademiaHome({ resumeHref, emailHref }: Props) {
                     src={img}
                     alt=""
                   />
-                  <div className="da-project-tag">{tag}</div>
+                  <div className="da-project-badges">
+                    {project.badges.map((b, bi) => (
+                      <span key={`${b.type}-${bi}`} className={`badge ${b.type}`}>
+                        {b.label}
+                      </span>
+                    ))}
+                  </div>
                   <div className="da-project-name">
                     {href ? (
                       <Link
@@ -191,8 +196,11 @@ export function AcademiaHome({ resumeHref, emailHref }: Props) {
                     </div>
                   ) : null}
                   <div className="da-pills">
-                    {project.stack.map((t) => (
-                      <span key={t} className="da-pill">
+                    {project.stack.map((t, pi) => (
+                      <span
+                        key={t}
+                        className={`da-pill da-pill--c${pi % 6}`}
+                      >
                         {t}
                       </span>
                     ))}

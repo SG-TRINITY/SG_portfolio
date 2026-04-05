@@ -208,8 +208,11 @@ export function TerminalHome({
                     </div>
                   ) : null}
                   <div className="project-stack">
-                    {project.stack.map((t) => (
-                      <span key={t} className="stack-tag">
+                    {project.stack.map((t, si) => (
+                      <span
+                        key={t}
+                        className={`stack-tag stack-tag--${si % 6}`}
+                      >
                         {t}
                       </span>
                     ))}

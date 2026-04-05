@@ -4,7 +4,17 @@ export type BioChunk =
   | { kind: "hl"; v: string }
   | { kind: "str"; v: string };
 
-export type ProjectBadge = "feat" | "ml" | "sys" | "web" | "qa";
+export type ProjectBadge =
+  | "feat"
+  | "ml"
+  | "sys"
+  | "web"
+  | "qa"
+  | "backend"
+  | "mobile"
+  | "team"
+  | "ux"
+  | "ai";
 
 export type ProjectBadgeChip = { label: string; type: ProjectBadge };
 
@@ -87,7 +97,10 @@ export const site = {
     {
       num: "01",
       folder: "TomatoSoup/",
-      badges: [{ label: "web", type: "web" as ProjectBadge }] satisfies ProjectBadgeChip[],
+      badges: [
+        { label: "backend", type: "backend" as ProjectBadge },
+        { label: "ux", type: "ux" as ProjectBadge },
+      ] satisfies ProjectBadgeChip[],
       description:
         "Django hobby community app—pick interests, a personalized “My Bowl” feed, posts with images, comments, and profiles. I owned UI/UX and frontend: templates, layout, and keeping the look consistent.",
       stack: ["django", "python", "html/css"],
@@ -113,7 +126,10 @@ export const site = {
     {
       num: "03",
       folder: "f24project-Kayanou/",
-      badges: [{ label: "web", type: "web" as ProjectBadge }] satisfies ProjectBadgeChip[],
+      badges: [
+        { label: "team", type: "team" as ProjectBadge },
+        { label: "ux", type: "ux" as ProjectBadge },
+      ] satisfies ProjectBadgeChip[],
       description:
         "CMPUT 401 (UAlberta) team software project. I led UI/UX and frontend work—making the product clear, usable, and visually cohesive for users.",
       stack: ["frontend", "ui/ux", "typescript"],
@@ -124,7 +140,10 @@ export const site = {
     {
       num: "04",
       folder: "agile-beast/",
-      badges: [{ label: "testing", type: "qa" as ProjectBadge }] satisfies ProjectBadgeChip[],
+      badges: [
+        { label: "mobile", type: "mobile" as ProjectBadge },
+        { label: "testing", type: "qa" as ProjectBadge },
+      ] satisfies ProjectBadgeChip[],
       description:
         "CMPUT 301 Android household-inventory app (items, tags, sort/filter, insurance-style records). I was responsible for testing—coverage, edge cases, and keeping quality tight as the team shipped features.",
       stack: ["java", "android", "testing"],
@@ -135,7 +154,10 @@ export const site = {
     {
       num: "05",
       folder: "SG_portfolio/",
-      badges: [{ label: "web", type: "web" as ProjectBadge }] satisfies ProjectBadgeChip[],
+      badges: [
+        { label: "web", type: "web" as ProjectBadge },
+        { label: "ux", type: "ux" as ProjectBadge },
+      ] satisfies ProjectBadgeChip[],
       description:
         "This site: terminal / GitHub-dark theme, optional live GitHub contribution graph, and copy driven from one config file—Next.js, React, TypeScript.",
       stack: ["next.js", "react", "typescript"],
@@ -146,7 +168,10 @@ export const site = {
     {
       num: "06",
       folder: "Borscht/",
-      badges: [{ label: "web", type: "web" as ProjectBadge }] satisfies ProjectBadgeChip[],
+      badges: [
+        { label: "web", type: "web" as ProjectBadge },
+        { label: "ai", type: "ai" as ProjectBadge },
+      ] satisfies ProjectBadgeChip[],
       description:
         "Brutalist SPA for feeding résumés and cover letters into an AI review-and-roast pipeline—upload flow, roast intensity, industrial UI. Vite + React 19 + TypeScript; backend and models are the next step.",
       stack: ["vite", "react", "typescript"],

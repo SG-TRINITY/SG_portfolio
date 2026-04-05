@@ -143,6 +143,17 @@ export const site = {
         repo: "https://github.com/SG-TRINITY/SG_portfolio",
       },
     },
+    {
+      num: "06",
+      folder: "Borscht/",
+      badges: [{ label: "web", type: "web" as ProjectBadge }] satisfies ProjectBadgeChip[],
+      description:
+        "Brutalist SPA for feeding résumés and cover letters into an AI review-and-roast pipeline—upload flow, roast intensity, industrial UI. Vite + React 19 + TypeScript; backend and models are the next step.",
+      stack: ["vite", "react", "typescript"],
+      links: {
+        repo: "https://github.com/SG-TRINITY/Borscht",
+      },
+    },
   ],
   skillGroups: [
     {

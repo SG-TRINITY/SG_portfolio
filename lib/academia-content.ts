@@ -22,6 +22,7 @@ export const academiaContent = {
     "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=600&q=80",
     "https://images.unsplash.com/photo-1550399105-c4db5fb85c18?w=600&q=80",
     "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&q=80",
+    "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&q=80&auto=format&fit=crop",
   ],
   footerLeftNote: "composed by candlelight",
   footerRightMotto: "semper discens — always learning",

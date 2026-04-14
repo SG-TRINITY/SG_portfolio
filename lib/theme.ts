@@ -1,4 +1,5 @@
-export const THEME_STORAGE_KEY = "sg-theme";
+/** v2 key; legacy `sg-theme` is ignored so the default stays terminal-first. */
+export const THEME_STORAGE_KEY = "sg-site-theme";
 
 export const THEME_CHANGE_EVENT = "sg-theme-change";
 

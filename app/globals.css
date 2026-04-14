@@ -1048,8 +1048,14 @@ html[data-theme="academia"] .theme-fab-open {
   }
 }
 
-html[data-theme="terminal"] .academia-only {
+/* Terminal-first: academia is hidden unless data-theme is explicitly academia
+   (covers first paint before theme script and any missing data-theme). */
+.academia-only {
   display: none !important;
+}
+
+html[data-theme="academia"] .academia-only {
+  display: revert !important;
 }
 
 html[data-theme="academia"] .terminal-only {

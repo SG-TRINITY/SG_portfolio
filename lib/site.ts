@@ -251,19 +251,19 @@ export const site = {
     },
     {
       key: "linkedin",
-      display: "linkedin.com/in/shrishty-g",
-      href: "https://www.linkedin.com/in/shrishty-g-260a032b6/",
+      display: "linkedin.com/in/shrishty-gnanasekaran",
+      href: "https://www.linkedin.com/in/shrishty-gnanasekaran/",
     },
     {
       key: "resume",
       display: "download pdf",
-      href: "/ShrishtyG_Resume_sw.pdf",
+      href: "/SG_sw_fullstack.pdf",
     },
   ],
   footer: {
     rightPrefix: "made with ",
     rightHeart: "♥",
-    rightSuffix: " and too much caffeine",
+    rightSuffix: " and a lot of Cheetos",
   },
   /** Page <title> and meta description */
   metaTitle: "Shrishty G — cs student",

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ExperienceSection } from "./ExperienceSection";
 import { renderBioChunks } from "@/components/BioChunks";
 import type { GitHubContributionDay } from "@/lib/github-contributions";
 import { ContribGrid } from "@/components/ContribGrid";
@@ -34,6 +35,7 @@ export function TerminalHome({
         <div className="titlebar-right">
           <nav className="tb-nav">
             <a href="#about">~/about</a>
+            <a href="#experience">~/experience</a>
             <a href="#projects">~/projects</a>
             <a href="#skills">~/skills</a>
             <a href="#contact">~/contact</a>
@@ -133,9 +135,13 @@ export function TerminalHome({
       </section>
 
       <div className="contrib-section">
-        <div className="contrib-label">activity — last 24 weeks</div>
+        <div className="contrib-label">
+          {contributionWeeks?.length ? "activity — last 24 weeks" : "activity — decorative preview"}
+        </div>
         <ContribGrid weeks={contributionWeeks} seed={site.contribSeed} />
       </div>
+
+      <ExperienceSection />
 
       <section className="section" id="projects">
         <div className="section-cmd">
@@ -207,16 +213,18 @@ export function TerminalHome({
                       ) : null}
                     </div>
                   ) : null}
-                  <div className="project-stack">
-                    {project.stack.map((t, si) => (
-                      <span
-                        key={t}
-                        className={`stack-tag stack-tag--${si % 6}`}
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
+                  {project.stack.length > 0 && (
+                    <div className="project-stack">
+                      {project.stack.map((t, si) => (
+                        <span
+                          key={t}
+                          className={`stack-tag stack-tag--${si % 6}`}
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             );

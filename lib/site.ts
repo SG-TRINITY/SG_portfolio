@@ -31,65 +31,52 @@ export const site = {
   name: "Shrishty Gnanasekaran",
   /** Rotating strings under the hero heading */
   typingPhrases: [
-    "software engineer",
-    "ml enthusiast",
-    "open source contributor",
-    "full stack dev",
-    "web developer",
-    "computer scientist",
-    "bug wrangler",
+    "building things & causing minor chaos ✨",
+    "professionally curious, occasionally chaotic 🌀",
+    "turning 'what if...' into working software 💻",
+    "making pixels behave (mostly) 💅",
+    "side quests are my main quests 🎮",
+    "it worked on my machine 💀",
+    "building things I probably should've downloaded 🛠️",
+    "CSS enthusiast. JavaScript survivor. 🎨",
+    "professional side-quest enthusiast ✨",
   ],
   heroBio: [
     { kind: "text", v: "CS graduate " },
     { kind: "hl", v: "@[University of Alberta]" },
-    { kind: "text", v: " · focused on " },
-    { kind: "hl", v: "[web development]" },
-    {
-      kind: "text",
-      v: " · building things that are useful, sometimes elegant, occasionally both. Open to internships, research, and interesting problems.",
-    },
+    { kind: "text", v: " with experience across " },
+    { kind: "hl", v: "[full-stack development]" },
+    { kind: "text", v: " and a soft spot for " },
+    { kind: "hl", v: "[creative frontend & UI/UX]" },
+    { kind: "text", v: ". I love building things that work, making them look good, and occasionally turning minor inconveniences into entire side projects. ✨" },
   ] satisfies BioChunk[],
   statusRow: [
-    { key: "status:", value: "● open_to_work", valClass: "green" as const },
-    { key: "location:", value: "[Edmonton, Canada]", valClass: "blue" as const },
-    { key: "year:", value: "[new grad]", valClass: "yellow" as const },
+    { key: "location:", value: "[London, ON]", valClass: "blue" as const },
+    { key: "day job:", value: "[Residence Life Coordinator]", valClass: "green" as const },
   ],
   aboutLeft: [
     [
-      { kind: "text", v: "Hi — I'm a " },
-      { kind: "str", v: "[new grad]" },
-      {
-        kind: "text",
-        v: " CS graduate from ",
-      },
-      { kind: "hl", v: "[University of Alberta]" },
-      {
-        kind: "text",
-        v: ". I love building software that does something real, preferably something that would have seemed like magic a decade ago.",
-      },
+      { kind: "text", v: "I studied Computer Science at the " },
+      { kind: "hl", v: "University of Alberta" },
+      { kind: "text", v: ". I build across the full stack, but creative frontend and UI/UX are where I have the most fun." },
     ],
     [
-      { kind: "text", v: "My interests include " },
-      { kind: "hl", v: "[web development]" },
-      {
-        kind: "text",
-        v: ", distributed systems, and the occasional rabbit hole into programming language theory at 2am.",
-      },
+      { kind: "text", v: "I’m a " },
+      { kind: "hl", v: "Residence Life Coordinator at Western University" },
+      { kind: "text", v: ", where I support students, build community, and work on problems that unfortunately cannot be fixed by restarting the server." },
     ],
     [
-      {
-        kind: "text",
-        v: "Outside of code: reading, contributing to open source, and spending way too long configuring my terminal. Some things are worth it.",
-      },
+      { kind: "text", v: "Away from my laptop, I’m usually reading or playing dodgeball. Back at my laptop, I’m probably turning a silly idea into a side project." },
     ],
   ] satisfies BioChunk[][],
   whoami: [
     { key: "name", value: '"Shrishty G"', valClass: "default" as const },
-    { key: "uni", value: '"[University of Alberta]"', valClass: "blue" as const },
-    { key: "focus", value: '"[web development]"', valClass: "purple" as const },
-    { key: "available", value: "true", valClass: "green" as const },
-    { key: "location", value: '"[Edmonton, Canada]"', valClass: "default" as const },
-    { key: "coffee", value: "required", valClass: "yellow" as const },
+    { key: "uni", value: '"University of Alberta"', valClass: "blue" as const },
+    { key: "focus", value: '"full-stack + UI/UX"', valClass: "purple" as const },
+    { key: "day_job", value: '"Residence Life Coordinator"', valClass: "default" as const },
+    { key: "sports", value: '"dodgeball 🏐"', valClass: "blue" as const },
+    { key: "side_quests", value: "true", valClass: "green" as const },
+    { key: "coffee", value: '"sleep_mode 💤"', valClass: "yellow" as const },
   ],
   /** Seed so the activity grid matches SSR and client */
   contribSeed: 20260321,
@@ -179,6 +166,14 @@ export const site = {
         repo: "https://github.com/SG-TRINITY/Borscht",
       },
     },
+    {
+      num: "07",
+      folder: "Ladle Me Jobs/",
+      badges: [{ label: "personal", type: "feat" as ProjectBadge }] satisfies ProjectBadgeChip[],
+      description: "A personal project for my job search.",
+      stack: [],
+      links: { repo: undefined },
+    },
   ],
   skillGroups: [
     {
@@ -241,7 +236,7 @@ export const site = {
     },
   ],
   contactTagline:
-    "open to: internships · research · collabs · interesting problems",
+    "open to: open source · collaborations · creative side quests · interesting ideas ✨",
   contactCells: [
     { key: "email", display: "gnshrishty@gmail.com", href: "mailto:gnshrishty@gmail.com" },
     {
@@ -266,7 +261,7 @@ export const site = {
     rightSuffix: " and a lot of Cheetos",
   },
   /** Page <title> and meta description */
-  metaTitle: "Shrishty G — cs student",
+  metaTitle: "Shrishty G — personal website",
   metaDescription:
-    "CS student portfolio — projects, skills, and contact. Open to internships and interesting problems.",
+    "Personal website of Shrishty Gnanasekaran, a CS graduate and Residence Life Coordinator. Explore my experience, projects, and skills.",
 } as const;

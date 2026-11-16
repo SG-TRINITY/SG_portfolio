@@ -109,15 +109,7 @@ export function AcademiaHome({ resumeHref, emailHref }: Props) {
                   <div key={row.key} className="da-ledger-row">
                     <span className="da-l-key">{row.key}</span>
                     <span className="da-l-val">
-                      {row.key === "available" &&
-                      row.value.replace(/"/g, "").toLowerCase() === "true" ? (
-                        <>
-                          <span className="da-dot" aria-hidden />
-                          Available
-                        </>
-                      ) : (
-                        row.value.replace(/^"|"$/g, "")
-                      )}
+                      {row.value.replace(/^"|"$/g, "")}
                     </span>
                   </div>
                 ))}
